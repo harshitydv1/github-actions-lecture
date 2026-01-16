@@ -1,0 +1,25 @@
+#Name
+#Trigger
+#Job
+    #stop
+
+
+name: React CI
+on: push
+jobs:
+# purpose
+  run-tests:
+    runs-on: ubuntu-latest # virtual environment
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # checkout action or inbuilt action
+
+      - name: Install Dependencies
+        run: npm install      # install dependencies and defined in package.json
+
+
+      - name: Run tests
+        run: npm test         # run tests defined in package.json
+
+        with:
+          node-version: '18'
