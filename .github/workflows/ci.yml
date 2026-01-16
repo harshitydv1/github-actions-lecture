@@ -17,9 +17,8 @@ jobs:
       - name: Install Dependencies
         run: npm install      # install dependencies and defined in package.json
 
+        with:
+          node-version: '18'
 
       - name: Run tests
         run: npm test         # run tests defined in package.json
-
-        with:
-          node-version: '18'
